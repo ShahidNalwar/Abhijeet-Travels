@@ -416,7 +416,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .navbar-logo a { font-size: 1.2rem; }
+    .navbar-logo a { font-size: 0.9rem; }
     .navbar-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--secondary-color); padding: 1.5rem 0; text-align: center; box-shadow: 0 10px 15px var(--shadow-color); border-top: 1px solid #333; }
     .navbar-links.active { display: flex; }
     .navbar-social.desktop-social {
@@ -434,4 +434,51 @@ body {
     .section-title { font-size: 2rem; }
     .hero-content h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
     .options-container, .packages-container, .advantages-container, .routes-container, .testimonials-container { grid-template-columns: 1fr; }
+}
+
+
+.mobile-bottom-nav {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.mobile-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 0.5rem 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-link i {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+@media (max-width: 768px) {
+    body {
+        /* Add padding to prevent content from being hidden by the bottom nav */
+        padding-bottom: 60px; 
+    }
+
+    .mobile-bottom-nav {
+        display: flex; /* Show the nav on mobile */
+    }
+
+    /* ... other existing 768px rules ... */
 }
