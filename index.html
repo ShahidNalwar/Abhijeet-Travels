@@ -5,248 +5,516 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMKBM4K761"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMKBM4K761"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DMKBM4K761');
+    </script>
 
-            gtag('config', 'G-DMKBM4K761');
-        </script>
+    <meta name="description" content="Book affordable car rental, taxi, and cab services in Solapur, Pune & Mumbai. Airport pickup & drop, outstation cabs, pilgrimage tours & luxury car hire available 24/7.">
+    <meta name="keywords" content="Car rental Solapur, Taxi service Solapur, Car hire Pune, Car rental Mumbai, Airport pickup Solapur, Pune to Mumbai cab, Mumbai to Shirdi taxi, Outstation cab service, Abhijeet Travels Solapur, Affordable car hire">
+    <meta name="author" content="Abhijeet Tours & Travels">
+    <meta name="robots" content="index, follow">
 
-        <meta name="description"
-            content="Book affordable car rental, taxi, and cab services in Solapur, Pune & Mumbai. Airport pickup & drop, outstation cabs, self-drive cars, pilgrimage tours & luxury car hire available 24/7.">
+    <!-- Open Graph Tags (for WhatsApp/Facebook sharing) -->
+    <meta property="og:title" content="Abhijeet Tours & Travels | Car Rental & Taxi Service in Solapur">
+    <meta property="og:description" content="Affordable cab, taxi & tour packages from Solapur to Pune, Mumbai, Shirdi & more. Book now via WhatsApp!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.jpg">
 
-        <meta name="keywords"
-            content="Car rental Solapur, Taxi service Solapur, Car hire Pune, Car rental Mumbai, Airport pickup Solapur, Pune to Mumbai cab, Mumbai to Shirdi taxi, Outstation cab service, Abhijeet Travels Solapur, Affordable car hire">
-
-        <meta name="author" content="Abhijeet Tours & Travels">
-
-        <meta name="robots" content="index, follow">
-    </head>
+    <!-- Schema Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Abhijeet Tours & Travels",
+      "description": "Car rental, taxi, cab service and tour packages from Solapur to Pune, Mumbai, Shirdi and across Maharashtra.",
+      "telephone": "+91-7020460865",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Solapur",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["Solapur", "Pune", "Mumbai", "Kolhapur", "Nashik", "Shirdi"],
+      "priceRange": "₹₹",
+      "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
 
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <title>Abhijeet Tours & Travels | Car Rental & Taxi Service in Solapur, Pune & Mumbai</title>
+
+    <title>Abhijeet Tours & Travels | Cab & Taxi Service Solapur, Pune, Mumbai</title>
 </head>
 
 <body>
+
+    <!-- ===================== NAVBAR ===================== -->
     <nav class="navbar" id="navbar">
         <div class="navbar-logo">
             <img src="images/logo.jpg" alt="Abhijeet Travels Logo" class="logo-image">
             <a href="#">Abhijeet <span>Tours & Travels</span></a>
         </div>
+
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="#hero-booking-form">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#vehicles">Vehicles</a></li>
             <li><a href="#routes">Routes</a></li>
             <li><a href="#package_tours">Packages</a></li>
             <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="mobile-social">
-                <a href="https://wa.me/919834775008" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="tel:+917020460865" aria-label="Contact"><i class="fa-solid fa-phone"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/917020460865" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+917020460865" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://www.instagram.com/abhijeettravels?utm_source=ig_web_button_share_sheet&igsh=MWoweWE3MWoyNXhueQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </li>
         </ul>
 
         <div class="navbar-social desktop-social">
-            <a href="https://wa.me/919834775008" target="_blank" aria-label="WhatsApp"><i
-                    class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/abhijeettravels?utm_source=ig_web_button_share_sheet&igsh=MWoweWE3MWoyNXhueQ=="
-                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+91-7020460865 " class="navbar-phone-btn"><i class="fas fa-phone"></i>7020460865 </a>
+            <a href="https://wa.me/917020460865" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/abhijeettravels?utm_source=ig_web_button_share_sheet&igsh=MWoweWE3MWoyNXhueQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="tel:+91-7020460865" class="navbar-phone-btn"><i class="fas fa-phone"></i> 7020460865</a>
         </div>
-        <div class="navbar-toggle" id="navbar-toggle">
+
+        <div class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu" role="button" tabindex="0">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
     </nav>
 
+    <!-- ===================== HERO ===================== -->
     <header class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge">🚗 Solapur's Most Trusted Travel Partner</div>
                 <h1>Your Journey, <span>Your Way.</span></h1>
-                <p class="quote">"Life is a journey, not a destination. We provide the keys to your next great
-                    adventure. Your perfect ride awaits."</p>
+                <p class="quote">"From pilgrimage routes to city transfers — comfortable, affordable, and reliable rides across Maharashtra, available 24/7."</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Happy Customers</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>15+</strong>
+                        <span>Routes Covered</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>24/7</strong>
+                        <span>Available</span>
+                    </div>
+                </div>
                 <a href="#vehicles" class="btn">Explore Our Fleet</a>
             </div>
-            <div class="hero-form-container">
-                <h3>Book Your Ride Now</h3>
-                <p>Quick, easy, and reliable booking via WhatsApp.</p>
-                <form class="booking-form" id="hero-booking-form">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+
+            <div class="hero-form-container" id="hero-booking-form">
+                <div class="form-header">
+                    <h3>Book Your Ride</h3>
+                    <p>Instant confirmation via WhatsApp</p>
+                </div>
+                <form class="booking-form" id="hero-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Your Name</label>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Mobile Number</label>
+                            <input type="tel" name="mobile" placeholder="+91 XXXXX XXXXX" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" name="mobile" placeholder="Mobile Number (10 digits)" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> From</label>
+                            <input type="text" name="source" placeholder="Source City" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-flag-checkered"></i> To</label>
+                            <input type="text" name="destination" placeholder="Destination City" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="source" placeholder="Source City" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-alt"></i> Travel Date</label>
+                            <input type="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-car"></i> Vehicle Type</label>
+                            <select name="vehicle" required>
+                                <option value="" disabled selected>Select Vehicle</option>
+                                <option value="Hatchback (WagonR/Swift) - ₹10/km">Hatchback - ₹10/km</option>
+                                <option value="Sedan (Dzire/Amaze) - ₹11/km">Sedan - ₹11/km</option>
+                                <option value="SUV (Ertiga/Carens) - ₹13/km">SUV - ₹13/km</option>
+                                <option value="Premium SUV (Innova/Crysta) - ₹18/km">Premium SUV - ₹18/km</option>
+                                <option value="Tempo Traveller (17-22 Seater) - ₹25/km">Tempo Traveller - ₹25/km</option>
+                                <option value="Urbania Tempo Traveller (Premium) - Contact for Price">Urbania (Premium)</option>
+                                <option value="Bus (30-55 Seater) - ₹55/km">Bus - ₹55/km</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="destination" placeholder="Destination City" required>
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-users"></i> Number of Passengers</label>
+                        <input type="number" name="passengers" placeholder="e.g. 4" min="1" max="55">
                     </div>
-                    <div class="form-group">
-                        <input type="date" name="date" required>
-                    </div>
-                    <button type="submit" class="btn">
-                        <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fab fa-whatsapp"></i> Send Booking Request on WhatsApp
                     </button>
                 </form>
             </div>
         </div>
     </header>
 
+    <!-- ===================== TICKER ===================== -->
     <section class="ticker-section">
-        <h3>Services Provided From</h3>
+        <h3>We Serve These Destinations</h3>
         <div class="ticker-container">
             <div class="ticker-wrapper" id="ticker-wrapper"></div>
         </div>
     </section>
 
+    <!-- ===================== VEHICLES ===================== -->
     <section class="cab-options-section" id="vehicles">
         <h2 class="section-title">Explore Our Fleet</h2>
-        <p class="section-description">From compact hatchbacks for city tours to spacious buses for large groups, we
-            have a diverse fleet to meet all your travel needs.</p>
+        <p class="section-description">From compact hatchbacks for city rides to spacious buses for large groups — we have the right vehicle for every journey.</p>
         <div class="options-container">
+            <div class="option-card card featured-card">
+                <div class="new-badge">NEW</div>
+                <img src="images/urbania.png" alt="Urbania Tempo Traveller Premium" loading="lazy" onerror="this.src='images/mini bus.png'">
+                <h4>Urbania <span class="premium-tag">Premium</span></h4>
+                <p class="models">Force Urbania (17-20 Seater, Luxury)</p>
+                <div class="price-badge">Contact for Price</div>
+                <a href="urbania.html" class="btn">View Details</a>
+            </div>
             <div class="option-card card">
-                <img src="images/wagon r.png" alt="Hatchback Car">
+                <img src="images/wagon r.png" alt="Hatchback Car - WagonR Swift" loading="lazy">
                 <h4>Hatchback</h4>
-                <p class="models">WagonR ,Swift or Similar</p>
-                <h4>Price : 10 Rs/km</h4>
+                <p class="models">WagonR, Swift or Similar</p>
+                <div class="price-badge">₹10 / km</div>
                 <a href="#hero-booking-form" class="btn">Book Now</a>
             </div>
             <div class="option-card card">
-                <img src="images/dzire.png" alt="Sedan Car">
+                <img src="images/dzire.png" alt="Sedan Car - Dzire Amaze" loading="lazy">
                 <h4>Sedan</h4>
                 <p class="models">Dzire, Aura, Xcent, Honda Amaze</p>
-                <h4>Price : 11 Rs/km</h4>
+                <div class="price-badge">₹11 / km</div>
                 <a href="#hero-booking-form" class="btn">Book Now</a>
             </div>
             <div class="option-card card">
-                <img src="images/ertiga.png" alt="SUV Car">
+                <img src="images/ertiga.png" alt="SUV Car - Ertiga Carens" loading="lazy">
                 <h4>SUV</h4>
                 <p class="models">Ertiga, Carens</p>
-                <h4>Price : 13 Rs/km</h4>
+                <div class="price-badge">₹13 / km</div>
                 <a href="#hero-booking-form" class="btn">Book Now</a>
             </div>
             <div class="option-card card">
-                <img src="images/innova.png" alt="Premium SUV Car">
+                <img src="images/innova.png" alt="Premium SUV - Innova Crysta" loading="lazy">
                 <h4>Premium SUV</h4>
                 <p class="models">Innova, Innova Crysta</p>
-                <h4>Price : 18 Rs/km</h4>
+                <div class="price-badge">₹18 / km</div>
                 <a href="#hero-booking-form" class="btn">Book Now</a>
             </div>
             <div class="option-card card">
-                <img src="images/mini bus.png" alt="Mini Bus">
+                <img src="images/mini bus.png" alt="Tempo Traveller - Force Traveller" loading="lazy">
                 <h4>Tempo Traveller</h4>
                 <p class="models">Force Traveller (17, 20, 22 Seater)</p>
-                <h4>Price : 25 Rs/km</h4>
+                <div class="price-badge">₹25 / km</div>
                 <a href="#hero-booking-form" class="btn">Book Now</a>
             </div>
             <div class="option-card card">
-                <img src="images/bus.png" alt="Bus">
+                <img src="images/bus.png" alt="Bus - 30 to 55 Seater" loading="lazy">
                 <h4>Bus</h4>
                 <p class="models">30, 40, 45, 50, 55 Seater</p>
-                <h4>Price : 55 Rs/km</h4>
+                <div class="price-badge">₹55 / km</div>
                 <a href="#hero-booking-form" class="btn">Book Now</a>
             </div>
         </div>
+        <p class="scroll-hint"><i class="fas fa-hand-point-right"></i> Swipe to explore all vehicles</p>
     </section>
 
-    <section class="routes-section" id="routes">
-        <h2 class="section-title">Popular Routes</h2>
-        <p class="section-description">We offer reliable services on all major routes. Here are some of our most
-            frequently traveled paths.</p>
-        <div class="routes-container">
-            <div class="route-card card">
-                <h4>Solapur</h4>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Tuljapur</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Pandharpur</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Akkalkot</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Pune</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Ahmednagar</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Kolhapur</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Aurangabad</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Jalna</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Ratnagiri</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Thane</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Mumbai</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Nashik</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Satara</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Shirdi</p>
-                <p>Solapur <i class="fas fa-arrow-right-long"></i> Hyderabad</p>
+    <!-- ===================== ROUTES — SOLAPUR DETAILED CARDS ===================== -->
+    <section class="routes-section routes-solapur-section" id="routes">
+        <h2 class="section-title">Routes From Solapur</h2>
+        <p class="section-description">Fixed-price cab service from Solapur — no hidden charges. One-way & round trip available.</p>
 
-                <a href="#hero-booking-form" class="btn">Book Now</a>
+        <div class="solapur-routes-scroll">
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Pune</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 520 km</span>
+                        <span><i class="fas fa-clock"></i> ~7 hrs</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹4,000</span><span>₹6,600</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹4,800</span><span>₹7,500</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹6,500</span><span>₹10,500</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
             </div>
-            <div class="route-card card">
-                <h4>Pune</h4>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Mumbai</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Lonavala</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Khandala</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Shirdi</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Nashik</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Aurangabad</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Mahabaleshwar</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Panchgani</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Goa</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Sangli</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Satara</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Bhimashankar</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Alibag</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Solapur</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Latur</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Solapur</p>
-                <p>Pune <i class="fas fa-arrow-right-long"></i> Lasava</p>
-                <a href="#hero-booking-form" class="btn">Book Now</a>
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Mumbai</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 860 km</span>
+                        <span><i class="fas fa-clock"></i> ~11 hrs</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹6,860</span><span>₹10,500</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹8,200</span><span>₹12,580</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹13,500</span><span>₹17,000</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
             </div>
-            <div class="route-card card">
-                <h4>Mumbai</h4>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Puna</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Lonavala</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Khandala</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Shirdi</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Nashik</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Aurangabad</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Mahabaleshwar</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Alibag</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Goa</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Kolhapur</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Surat</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Matheran</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Daman</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Imagica</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Murud-Janjira</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Saputara</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Bhimashankar</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Karjat</p>
-                <p>Mumbai <i class="fas fa-arrow-right-long"></i> Igatpuri</p>
-                <a href="#hero-booking-form" class="btn">Book Now</a>
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Kolhapur</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 500 km</span>
+                        <span><i class="fas fa-clock"></i> ~7 hrs</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹4,800</span><span>₹7,200</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹5,100</span><span>₹7,600</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹6,900</span><span>₹10,500</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
             </div>
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Hyderabad</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 650 km</span>
+                        <span><i class="fas fa-clock"></i> ~9 hrs</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹5,200</span><span>₹8,200</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹6,500</span><span>₹9,300</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹8,800</span><span>₹12,650</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
+            </div>
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Akkalkot</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 28 km</span>
+                        <span><i class="fas fa-clock"></i> ~40 min</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹2,200</span><span>₹3,500</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹2,600</span><span>₹4,200</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹3,100</span><span>₹5,200</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-bus"></i> Tempo Traveller</span><span>₹4,500</span><span>₹7,200</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
+            </div>
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Tuljapur</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 45 km</span>
+                        <span><i class="fas fa-clock"></i> ~1 hr</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹2,100</span><span>₹3,500</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹2,600</span><span>₹4,200</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹3,100</span><span>₹5,200</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-bus"></i> Tempo Traveller</span><span>₹4,500</span><span>₹7,200</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
+            </div>
+
+            <div class="sr-card card">
+                <div class="sr-card-header">
+                    <div class="sr-route-name">
+                        <span class="sr-from">Solapur</span>
+                        <i class="fas fa-arrow-right sr-arrow"></i>
+                        <span class="sr-to">Pandharpur</span>
+                    </div>
+                    <div class="sr-meta">
+                        <span><i class="fas fa-road"></i> 75 km</span>
+                        <span><i class="fas fa-clock"></i> ~1.5 hrs</span>
+                    </div>
+                </div>
+                <div class="sr-prices">
+                    <div class="sr-price-row header-row">
+                        <span>Vehicle</span><span>One-Way</span><span>Round</span>
+                    </div>
+                    <div class="sr-price-row"><span><i class="fas fa-car"></i> Sedan</span><span>₹2,800</span><span>₹3,800</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> SUV</span><span>₹3,100</span><span>₹4,300</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-car-side"></i> Premium SUV</span><span>₹3,600</span><span>₹5,800</span></div>
+                    <div class="sr-price-row"><span><i class="fas fa-bus"></i> Tempo Traveller</span><span>₹5,000</span><span>₹8,000</span></div>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book This Route</a>
+            </div>
+
         </div>
+        <p class="scroll-hint"><i class="fas fa-hand-point-right"></i> Swipe to see more routes</p>
     </section>
 
+    <!-- ===================== ROUTES — ALL CITIES SCROLLABLE ===================== -->
+    <section class="routes-section routes-all-section" id="all-routes">
+        <h2 class="section-title">All Routes We Cover</h2>
+        <p class="section-description">From Solapur, Pune, Mumbai & Kolhapur — we go everywhere across Maharashtra.</p>
+
+        <div class="all-routes-scroll">
+
+            <div class="route-card card">
+                <div class="route-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h4>From Solapur</h4>
+                <div class="route-list">
+                    <a href="solapur-to-pune.html" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Pune <span class="route-price">From ₹4,000</span></a>
+                    <a href="solapur-to-mumbai.html" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Mumbai <span class="route-price">From ₹6,860</span></a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Kolhapur <span class="route-price">From ₹4,800</span></a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Hyderabad <span class="route-price">From ₹5,200</span></a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Akkalkot <span class="route-price">From ₹2,200</span></a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Tuljapur <span class="route-price">From ₹2,100</span></a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Pandharpur <span class="route-price">From ₹2,800</span></a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Shirdi</a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Nashik</a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Aurangabad</a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Satara</a>
+                    <a href="#hero-booking-form" class="route-link">Solapur <i class="fas fa-arrow-right"></i> Ratnagiri</a>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book Solapur Route</a>
+            </div>
+
+            <div class="route-card card">
+                <div class="route-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h4>From Pune</h4>
+                <div class="route-list">
+                    <a href="pune-to-mumbai.html" class="route-link">Pune <i class="fas fa-arrow-right"></i> Mumbai</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Shirdi</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Lonavala</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Mahabaleshwar</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Nashik</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Aurangabad</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Goa</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Solapur</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Kolhapur</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Satara</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Panchgani</a>
+                    <a href="#hero-booking-form" class="route-link">Pune <i class="fas fa-arrow-right"></i> Alibag</a>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book Pune Route</a>
+            </div>
+
+            <div class="route-card card">
+                <div class="route-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h4>From Mumbai</h4>
+                <div class="route-list">
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Pune</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Shirdi</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Nashik</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Lonavala</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Aurangabad</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Goa</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Mahabaleshwar</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Alibag</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Kolhapur</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Surat</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Matheran</a>
+                    <a href="#hero-booking-form" class="route-link">Mumbai <i class="fas fa-arrow-right"></i> Daman</a>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book Mumbai Route</a>
+            </div>
+
+            <div class="route-card card">
+                <div class="route-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h4>From Kolhapur</h4>
+                <div class="route-list">
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Pune</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Mumbai</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Solapur</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Goa</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Sangli</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Satara</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Mahabaleshwar</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Ratnagiri</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Nashik</a>
+                    <a href="#hero-booking-form" class="route-link">Kolhapur <i class="fas fa-arrow-right"></i> Aurangabad</a>
+                </div>
+                <a href="#hero-booking-form" class="btn">Book Kolhapur Route</a>
+            </div>
+
+        </div>
+        <p class="scroll-hint"><i class="fas fa-hand-point-right"></i> Swipe to see more cities</p>
+    </section>
+
+    <!-- ===================== PACKAGES ===================== -->
     <section class="tour-packages-section" id="package_tours">
-        <h2 class="section-title">Popular & Special Tour Packages</h2>
+        <h2 class="section-title">Popular Tour Packages</h2>
+        <p class="section-description">Handcrafted travel experiences from Solapur — pilgrimages, sightseeing, and weekend getaways.</p>
         <div class="packages-container">
             <div class="package-card card">
-                <img src="images/pilgrimage.jpg" class="package-card-image" alt="Pilgrimage collage">
+                <img src="images/pilgrimage.jpg" class="package-card-image" alt="Pilgrimage tour from Solapur" loading="lazy">
                 <div class="package-card-content">
-                    <h4>Our Special Pilgrim Tour</h4>
-                    <span class="package-duration">Custom Duration</span>
+                    <h4>Solapur Pilgrim Tour</h4>
+                    <span class="package-duration"><i class="fas fa-clock"></i> Custom Duration</span>
                     <ul class="package-highlights">
                         <li><i class="fas fa-place-of-worship"></i> Akkalkot & Gangapur</li>
                         <li><i class="fas fa-place-of-worship"></i> Tuljapur & Pandharpur</li>
@@ -256,10 +524,10 @@
                 </div>
             </div>
             <div class="package-card card">
-                <img src="images/gateway of india.jpg" class="package-card-image" alt="Gateway of India in Mumbai">
+                <img src="images/gateway of india.jpg" class="package-card-image" alt="Mumbai sightseeing tour" loading="lazy">
                 <div class="package-card-content">
                     <h4>Mumbai Magic</h4>
-                    <span class="package-duration">2 Days / 1 Night</span>
+                    <span class="package-duration"><i class="fas fa-clock"></i> 2 Days / 1 Night</span>
                     <ul class="package-highlights">
                         <li><i class="fas fa-check-circle"></i> Gateway of India & Taj Hotel</li>
                         <li><i class="fas fa-check-circle"></i> Marine Drive Sunset</li>
@@ -269,10 +537,10 @@
                 </div>
             </div>
             <div class="package-card card">
-                <img src="images/lonavala.jpg" class="package-card-image" alt="Hills of Lonavala">
+                <img src="images/lonavala.jpg" class="package-card-image" alt="Pune Lonavala trip" loading="lazy">
                 <div class="package-card-content">
                     <h4>Pune & Lonavala Escape</h4>
-                    <span class="package-duration">3 Days / 2 Nights</span>
+                    <span class="package-duration"><i class="fas fa-clock"></i> 3 Days / 2 Nights</span>
                     <ul class="package-highlights">
                         <li><i class="fas fa-check-circle"></i> Shaniwar Wada Fort</li>
                         <li><i class="fas fa-check-circle"></i> Lonavala & Khandala Hills</li>
@@ -282,142 +550,178 @@
                 </div>
             </div>
         </div>
+        <div class="packages-cta">
+            <a href="packages.html" class="btn btn-outline">View All Packages <i class="fas fa-arrow-right"></i></a>
+        </div>
     </section>
 
-    <section class="booking-section" id="contact">
-        <h2 class="section-title">Book Your Ride</h2>
-        <p class="section-description">Fill out the form below to send us a booking request on WhatsApp. We'll get back
-            to you shortly!</p>
-        <form class="booking-form" id="contact-booking-form">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" name="mobile" placeholder="Mobile Number (10 digits)" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="source" placeholder="Source City" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="destination" placeholder="Destination City" required>
-            </div>
-            <div class="form-group">
-                <input type="date" name="date" required>
-            </div>
-            <button type="submit" class="btn">
-                <i class="fab fa-whatsapp"></i> Book via WhatsApp
-            </button>
-        </form>
-    </section>
-
+    <!-- ===================== WHY CHOOSE US ===================== -->
     <section class="why-choose-us-section">
         <h2 class="section-title">Why Choose Us?</h2>
         <div class="advantages-container">
             <div class="advantage-card card">
                 <i class="fas fa-headset"></i>
                 <h4>24/7 Support</h4>
-                <p>Our team is available round the clock to assist you with any queries or issues.</p>
+                <p>Our team is available round the clock to assist you with any queries or emergencies.</p>
             </div>
             <div class="advantage-card card">
                 <i class="fas fa-shield-alt"></i>
                 <h4>Verified Drivers</h4>
-                <p>Travel with peace of mind with our professional and background-verified drivers.</p>
+                <p>Travel with peace of mind — all our drivers are professional and background-verified.</p>
             </div>
             <div class="advantage-card card">
                 <i class="fas fa-car"></i>
                 <h4>Clean Vehicles</h4>
-                <p>We ensure all our vehicles are regularly sanitized and maintained for your comfort.</p>
+                <p>All vehicles are regularly sanitized and maintained for your comfort and safety.</p>
             </div>
             <div class="advantage-card card">
                 <i class="fas fa-tags"></i>
                 <h4>Best Prices</h4>
-                <p>Enjoy competitive pricing and transparent billing with no hidden charges.</p>
+                <p>Competitive pricing and transparent billing — no hidden charges, ever.</p>
             </div>
         </div>
     </section>
 
+    <!-- ===================== TESTIMONIALS ===================== -->
     <section class="testimonials-section" id="testimonials">
         <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-description">We take pride in our service. Here's what our happy customers have to say about
-            their journeys with us.</p>
+        <p class="section-description">Real experiences from real travellers who chose Abhijeet Travels.</p>
         <div class="testimonials-container">
             <div class="testimonial-card card">
-                <img src="images/R1.jpg" alt="Customer avatar" class="testimonial-avatar">
+                <img src="images/R1.jpg" alt="Customer review" class="testimonial-avatar" loading="lazy">
                 <div class="testimonial-content">
                     <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Best Service ,traveller and journey was comfortable "</p>
+                    <p>"Best Service — traveller and journey was very comfortable!"</p>
                 </div>
             </div>
             <div class="testimonial-card card">
-                <img src="images/R2.jpg" alt="Customer avatar" class="testimonial-avatar">
+                <img src="images/R2.jpg" alt="Customer review" class="testimonial-avatar" loading="lazy">
                 <div class="testimonial-content">
                     <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Yatra Was very comfortable and affordable."</p>
+                    <p>"Yatra was very comfortable and affordable. Will book again!"</p>
                 </div>
             </div>
             <div class="testimonial-card card">
-                <img src="images/R3.jpg" alt="Customer avatar" class="testimonial-avatar">
+                <img src="images/R3.jpg" alt="Customer review" class="testimonial-avatar" loading="lazy">
                 <div class="testimonial-content">
                     <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"The Journey was very divine , service was excellent"</p>
+                    <p>"The journey was very divine — service was excellent throughout."</p>
                 </div>
             </div>
             <div class="testimonial-card card">
-                <img src="images/R4.jpg" alt="Customer avatar" class="testimonial-avatar">
+                <img src="images/R4.jpg" alt="Customer review" class="testimonial-avatar" loading="lazy">
                 <div class="testimonial-content">
                     <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
                     <p>"Made our journey safe and enjoyable. Highly recommend their services."</p>
                 </div>
             </div>
             <div class="testimonial-card card">
-                <img src="images/R5.jpg" alt="Customer avatar" class="testimonial-avatar">
+                <img src="images/R5.jpg" alt="Customer review" class="testimonial-avatar" loading="lazy">
                 <div class="testimonial-content">
                     <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Friendly service, good communication, and reliable travel partner."</p>
+                    <p>"Friendly service, great communication, and a reliable travel partner."</p>
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- ===================== CONTACT BOOKING ===================== -->
+    <section class="booking-section" id="contact">
+        <h2 class="section-title">Book Your Ride</h2>
+        <p class="section-description">Fill out the form below to send a booking request directly to our WhatsApp. We'll confirm within minutes!</p>
+        <form class="booking-form" id="contact-booking-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Mobile Number</label>
+                    <input type="tel" name="mobile" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> From</label>
+                    <input type="text" name="source" placeholder="Source City" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-flag-checkered"></i> To</label>
+                    <input type="text" name="destination" placeholder="Destination City" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Travel Date</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-car"></i> Vehicle Type</label>
+                    <select name="vehicle" required>
+                        <option value="" disabled selected>Select Vehicle</option>
+                        <option value="Hatchback (WagonR/Swift) - ₹10/km">Hatchback - ₹10/km</option>
+                        <option value="Sedan (Dzire/Amaze) - ₹11/km">Sedan - ₹11/km</option>
+                        <option value="SUV (Ertiga/Carens) - ₹13/km">SUV - ₹13/km</option>
+                        <option value="Premium SUV (Innova/Crysta) - ₹18/km">Premium SUV - ₹18/km</option>
+                        <option value="Tempo Traveller (17-22 Seater) - ₹25/km">Tempo Traveller - ₹25/km</option>
+                        <option value="Urbania Tempo Traveller (Premium) - Contact for Price">Urbania (Premium)</option>
+                        <option value="Bus (30-55 Seater) - ₹55/km">Bus - ₹55/km</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label><i class="fas fa-users"></i> Number of Passengers</label>
+                <input type="number" name="passengers" placeholder="e.g. 4" min="1" max="55">
+            </div>
+            <button type="submit" class="btn btn-submit">
+                <i class="fab fa-whatsapp"></i> Send Booking Request on WhatsApp
+            </button>
+        </form>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <a href="#hero-booking-form">Abhijeet<span> Travels</span></a>
+                <a href="#home">Abhijeet<span> Travels</span></a>
+                <p class="footer-tagline">Solapur's Trusted Cab & Tour Service since 2015</p>
+            </div>
+            <div class="footer-links">
+                <a href="#vehicles">Fleet</a>
+                <a href="#routes">Routes</a>
+                <a href="#package_tours">Packages</a>
+                <a href="#contact">Book Now</a>
+            </div>
+            <div class="footer-contact">
+                <a href="tel:+917020460865"><i class="fas fa-phone"></i> +91 7020460865</a>
+                <a href="https://wa.me/917020460865" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                <span><i class="fas fa-map-marker-alt"></i> Solapur, Maharashtra</span>
             </div>
             <div class="footer-social">
-                <a href="https://wa.me/919834775008" target="_blank" aria-label="WhatsApp"><i
-                        class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/abhijeettravels?utm_source=ig_web_button_share_sheet&igsh=MWoweWE3MWoyNXhueQ=="
-                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/670957672757961?ref=pl_edit_xav_ig_profile_page_web"
-                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/917020460865" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/abhijeettravels?utm_source=ig_web_button_share_sheet&igsh=MWoweWE3MWoyNXhueQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/670957672757961?ref=pl_edit_xav_ig_profile_page_web" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Abhijeet Tours & Travels. All Rights Reserved.</p>
-                <small class="designer-credit">Designed by Shahid Nalwar | Mobile: +91-8010340573</small>
+                <small class="designer-credit">Designed by Shahid Nalwar | +91-8010340573</small>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Navigation Bar -->
+    <!-- ===================== MOBILE BOTTOM NAV ===================== -->
     <div class="mobile-bottom-nav">
-        <a href="#hero-booking-form" class="mobile-nav-link">
+        <a href="#home" class="mobile-nav-link">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
@@ -425,11 +729,11 @@
             <i class="fas fa-box-open"></i>
             <span>Packages</span>
         </a>
-        <a href="#hero-booking-form" class="mobile-nav-link">
+        <a href="#hero-booking-form" class="mobile-nav-link highlight-nav">
             <i class="fas fa-car-side"></i>
             <span>Book Ride</span>
         </a>
-        <a href="https://wa.me/917020460865" class="mobile-nav-link">
+        <a href="https://wa.me/917020460865" target="_blank" class="mobile-nav-link">
             <i class="fab fa-whatsapp"></i>
             <span>WhatsApp</span>
         </a>
@@ -441,5 +745,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
