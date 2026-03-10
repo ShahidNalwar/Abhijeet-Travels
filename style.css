@@ -1343,9 +1343,9 @@ section[id], header[id] {
 
     .section-title { font-size: 1.45rem; }
 
-    .option-card { flex: 0 0 190px; }
+    .option-card { flex: 0 0 300px; }
     .option-card img { height: 105px; }
-    .sr-card { flex: 0 0 240px; }
+    .sr-card { flex: 0 0 300px; }
 
     .all-routes-scroll { grid-template-columns: 1fr; }
     .route-card { height: 400px; }
