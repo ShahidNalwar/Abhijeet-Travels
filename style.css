@@ -20,7 +20,7 @@
 
 /* --- Reset & Base --- */
 *, *::before, *::after {
-    margin: 0;
+    margin: 2px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -726,6 +726,33 @@ section[id], header[id] {
 }
 .sr-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
 
+/* sr-card destination image */
+.sr-card-img {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+}
+
+.sr-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.sr-card:hover .sr-card-img img {
+    transform: scale(1.06);
+}
+
+.sr-card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,27,42,0.6) 0%, transparent 60%);
+}
+
 .sr-route-name { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
 .sr-from { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); }
 .sr-to { font-size: 1.1rem; font-weight: 700; color: var(--accent-color); }
@@ -735,31 +762,39 @@ section[id], header[id] {
 .sr-meta span { font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem; }
 .sr-meta i { color: var(--accent-color); font-size: 0.75rem; }
 
-.sr-prices {
+.sr-vehicles {
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     flex-grow: 1;
+    align-content: flex-start;
+    padding: 0.85rem;
     background-color: rgba(0,0,0,0.15);
     border-radius: 10px;
-    padding: 0.75rem;
 }
 
-.sr-price-row {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
+.sr-vehicle-tag {
+    display: inline-flex;
     align-items: center;
-    font-size: 0.82rem;
-    padding: 0.35rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    gap: 0.35rem;
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.25);
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    transition: background-color var(--transition);
 }
-.sr-price-row:last-child { border-bottom: none; }
-.sr-price-row span { color: var(--text-muted); }
-.sr-price-row span:first-child { display: flex; align-items: center; gap: 0.4rem; color: var(--text-color); }
-.sr-price-row span:first-child i { color: var(--accent-color); font-size: 0.8rem; }
-.sr-price-row span:not(:first-child) { text-align: right; font-weight: 600; color: var(--primary-color); }
-.sr-price-row.header-row span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-color); font-weight: 600; }
 
+.sr-vehicle-tag i {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+}
+
+.sr-card:hover .sr-vehicle-tag {
+    background-color: rgba(255, 193, 7, 0.2);
+}
 /* All routes city cards */
 .route-card {
     padding: 1.75rem;
@@ -1408,7 +1443,6 @@ section[id], header[id] {
 
     .sr-card { flex: 0 0 300px; padding: 1.25rem; }
     .sr-from, .sr-to { font-size: 0.95rem; }
-    .sr-price-row { font-size: 0.75rem; }
 
     .route-card { height: 380px; padding: 1.25rem; }
     .route-card h4 { font-size: 1.1rem; }

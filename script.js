@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Kolhapur',    image: 'images/kolhapur.jpg'   },
         { name: 'Ahmednagar',  image: 'images/ahmednagar.jpg' },
         { name: 'Shirdi',      image: 'images/shirdi.jpg'     },
-        { name: 'Thane',       image: 'images/thane.jpg'      }
+        { name: 'Thane',       image: 'images/thane.jpg'      },
+        { name: 'Hyderabad',   image: 'images/hyderabad.jpg'  }
     ];
 
     const tickerWrapper = document.getElementById('ticker-wrapper');
