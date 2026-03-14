@@ -1,8 +1,143 @@
+// ============================================================
+//  Abhijeet Tours & Travels — script.js
+//  EmailJS Integration: service_von5gvj / template_vp647bm
+// ============================================================
+
+// --- Initialise EmailJS (SDK loaded via <script> tag in HTML <head>) ---
+emailjs.init('Zt4jAYrHVAMrOCPuF');
+
+// EmailJS config
+const EMAILJS_SERVICE_ID  = 'service_von5gvj';
+const EMAILJS_TEMPLATE_ID = 'template_vp647bm';
+
+// ============================================================
+//  Show inline success / error message inside the form
+// ============================================================
+function showFormMessage(form, type, text) {
+    const existing = form.querySelector('.form-status-msg');
+    if (existing) existing.remove();
+
+    const msg = document.createElement('div');
+    msg.className = 'form-status-msg';
+    msg.style.cssText = `
+        margin-top: 1rem;
+        padding: 0.85rem 1.1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        ${type === 'success'
+            ? 'background:#d4edda; color:#155724; border:1px solid #c3e6cb;'
+            : 'background:#f8d7da; color:#721c24; border:1px solid #f5c6cb;'}
+    `;
+    msg.innerHTML = type === 'success'
+        ? `<i class="fas fa-check-circle"></i> ${text}`
+        : `<i class="fas fa-exclamation-circle"></i> ${text}`;
+
+    form.appendChild(msg);
+
+    if (type === 'success') {
+        setTimeout(() => msg.remove(), 6000);
+    }
+}
+
+// ============================================================
+//  Set submit button loading state
+// ============================================================
+function setButtonLoading(btn, loading) {
+    if (loading) {
+        btn.dataset.originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+        btn.style.opacity = '0.75';
+    } else {
+        btn.innerHTML = btn.dataset.originalText || 'Submit';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+    }
+}
+
+// ============================================================
+//  Reusable booking form submit handler
+// ============================================================
+const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name        = form.querySelector('input[name="name"]').value.trim();
+    const mobile      = form.querySelector('input[name="mobile"]').value.trim();
+    const source      = form.querySelector('input[name="source"]').value.trim();
+    const destination = form.querySelector('input[name="destination"]').value.trim();
+    const dateInput   = form.querySelector('input[name="date"]').value;
+    const vehicle     = form.querySelector('select[name="vehicle"]')?.value || 'Not specified';
+    const triptype    = form.querySelector('select[name="triptype"]')?.value || 'Not specified';
+    const passengers  = form.querySelector('input[name="passengers"]')?.value || 'Not specified';
+
+    // Validate mobile
+    if (!/^(\+91|91)?[6-9]\d{9}$/.test(mobile.replace(/\s+/g, ''))) {
+        showFormMessage(form, 'error', 'Please enter a valid 10-digit mobile number.');
+        return;
+    }
+
+    // Validate date
+    if (!dateInput) {
+        showFormMessage(form, 'error', 'Please select a travel date.');
+        return;
+    }
+
+    // Format date
+    const date = new Date(dateInput).toLocaleDateString('en-IN', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+
+    const templateParams = {
+        name,
+        mobile,
+        source,
+        destination,
+        date,
+        vehicle,
+        triptype,
+        passengers
+    };
+
+    const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    if (submitBtn) setButtonLoading(submitBtn, true);
+
+    const existing = form.querySelector('.form-status-msg');
+    if (existing) existing.remove();
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(() => {
+            showFormMessage(form, 'success', "Booking request sent! We'll call you shortly to confirm.");
+            form.reset();
+            // Restore pre-filled default values
+            const sourceField = form.querySelector('input[name="source"]');
+            const destField   = form.querySelector('input[name="destination"]');
+            if (sourceField && sourceField.defaultValue) sourceField.value = sourceField.defaultValue;
+            if (destField   && destField.defaultValue)   destField.value   = destField.defaultValue;
+        })
+        .catch((error) => {
+            console.error('EmailJS error:', error);
+            showFormMessage(form, 'error', 'Something went wrong. Please call us on +91 7020460865.');
+        })
+        .finally(() => {
+            if (submitBtn) setButtonLoading(submitBtn, false);
+        });
+};
+
+// ============================================================
+//  DOM Ready
+// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===================== NAVBAR =====================
+    // --- Navbar ---
     const navbarToggle = document.getElementById('navbar-toggle');
-    const navbarLinks = document.getElementById('navbar-links');
+    const navbarLinks  = document.getElementById('navbar-links');
 
     if (navbarToggle && navbarLinks) {
         navbarToggle.addEventListener('click', () => {
@@ -12,49 +147,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (navbarLinks) {
-        navbarLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                navbarLinks.classList.remove('active');
-                navbarToggle.classList.remove('active');
+        navbarLinks.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                if (navbarLinks.classList.contains('active')) {
+                    navbarLinks.classList.remove('active');
+                    navbarToggle.classList.remove('active');
+                }
             }
         });
     }
 
-    // Close menu on outside click
-    document.addEventListener('click', (e) => {
-        if (navbarLinks && navbarLinks.classList.contains('active')) {
-            if (!navbarLinks.contains(e.target) && !navbarToggle.contains(e.target)) {
-                navbarLinks.classList.remove('active');
-                navbarToggle.classList.remove('active');
-            }
-        }
-    });
-
-    // ===================== SET MIN DATE ON ALL DATE INPUTS =====================
-    const today = new Date().toISOString().split('T')[0];
-    document.querySelectorAll('input[type="date"]').forEach(input => {
-        input.min = today;
-    });
-
-    // ===================== TICKER =====================
+    // --- Ticker ---
     const destinations = [
-        { name: 'Solapur',     image: 'images/solapur.jpg'    },
-        { name: 'Akkalkot',    image: 'images/akkalkot.jpg'   },
-        { name: 'Tuljapur',    image: 'images/tuljapur.jpg'   },
-        { name: 'Pandharpur',  image: 'images/pandharpur.jpg' },
-        { name: 'Pune',        image: 'images/pune.jpg'       },
-        { name: 'Mumbai',      image: 'images/mumbai.jpg'     },
-        { name: 'Nashik',      image: 'images/nashik.jpg'     },
-        { name: 'Kolhapur',    image: 'images/kolhapur.jpg'   },
-        { name: 'Ahmednagar',  image: 'images/ahmednagar.jpg' },
-        { name: 'Shirdi',      image: 'images/shirdi.jpg'     },
-        { name: 'Thane',       image: 'images/thane.jpg'      },
-        { name: 'Hyderabad',   image: 'images/hyderabad.jpg'  }
+        { name: 'Solapur',    image: 'images/ajanta.jpg'     },
+        { name: 'Akkalkot',   image: 'images/akkalkot.jpg'   },
+        { name: 'Tuljapur',   image: 'images/tuljapur.jpg'   },
+        { name: 'Pandharpur', image: 'images/pandharpur.jpg' },
+        { name: 'Pune',       image: 'images/pune.jpg'       },
+        { name: 'Mumbai',     image: 'images/mumbai.jpg'     },
+        { name: 'Nashik',     image: 'images/nashik.jpg'     },
+        { name: 'Kolhapur',   image: 'images/kolhapur.jpg'   },
+        { name: 'Ahmednagar', image: 'images/ahmednagar.jpg' },
+        { name: 'Shirdi',     image: 'images/shirdi.jpg'     },
+        { name: 'Thane',      image: 'images/thane.jpg'      }
     ];
 
     const tickerWrapper = document.getElementById('ticker-wrapper');
     if (tickerWrapper) {
-        [...destinations, ...destinations].forEach(dest => {
+        const tickerItems = [...destinations, ...destinations];
+        tickerItems.forEach(dest => {
             const item = document.createElement('div');
             item.className = 'ticker-item';
             item.style.backgroundImage = `url(${dest.image})`;
@@ -65,59 +186,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===================== BOOKING FORM HANDLER =====================
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
+    // --- Min date on all date inputs ---
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+        input.min = new Date().toISOString().split('T')[0];
+    });
 
-        const name        = form.querySelector('input[name="name"]').value.trim();
-        const mobile      = form.querySelector('input[name="mobile"]').value.trim();
-        const source      = form.querySelector('input[name="source"]').value.trim();
-        const destination = form.querySelector('input[name="destination"]').value.trim();
-        const dateInput   = form.querySelector('input[name="date"]').value;
-        const vehicleEl   = form.querySelector('select[name="vehicle"]');
-        const passEl      = form.querySelector('input[name="passengers"]');
+    // --- Attach form handlers ---
+    const heroBookingForm    = document.getElementById('hero-booking-form');
+    const contactBookingForm = document.getElementById('contact-booking-form');
 
-        const vehicle     = vehicleEl ? vehicleEl.value : 'Not specified';
-        const passengers  = passEl && passEl.value ? passEl.value : 'Not specified';
-
-        // Validate mobile number
-        if (!/^(\+91|91)?[6-9]\d{9}$/.test(mobile.replace(/\s+/g, ''))) {
-            alert('Please enter a valid 10-digit Indian mobile number.');
-            return;
-        }
-
-        // Validate date
-        if (!dateInput) {
-            alert('Please select a travel date.');
-            return;
-        }
-
-        const date = new Date(dateInput).toLocaleDateString('en-IN', {
-            day: 'numeric', month: 'long', year: 'numeric'
-        });
-
-        const ownerWhatsApp = '917020460865';
-
-        const message =
-            `🚗 *New Booking Request — Abhijeet Travels*\n\n` +
-            `👤 *Name*: ${name}\n` +
-            `📞 *Mobile*: ${mobile}\n` +
-            `📍 *From*: ${source}\n` +
-            `🏁 *To*: ${destination}\n` +
-            `📅 *Date*: ${date}\n` +
-            `🚘 *Vehicle*: ${vehicle}\n` +
-            `👥 *Passengers*: ${passengers}`;
-
-        const whatsappURL = `https://wa.me/${ownerWhatsApp}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, '_blank');
-        form.reset();
-    };
-
-    const heroForm = document.getElementById('hero-form');
-    if (heroForm) heroForm.addEventListener('submit', handleFormSubmit);
-
-    const contactForm = document.getElementById('contact-booking-form');
-    if (contactForm) contactForm.addEventListener('submit', handleFormSubmit);
+    if (heroBookingForm)    heroBookingForm.addEventListener('submit', handleFormSubmit);
+    if (contactBookingForm) contactBookingForm.addEventListener('submit', handleFormSubmit);
 
 });
