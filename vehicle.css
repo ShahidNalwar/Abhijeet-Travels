@@ -1,0 +1,665 @@
+/* =======================================================
+   vehicle.css — Shared styles for vehicle showcase pages
+   Used by: urbania.html, cruiser.html
+   Abhijeet Tours & Travels
+   ======================================================= */
+
+/* ===== HERO ===== */
+.vehicle-hero {
+    min-height: 92vh;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #0a1520 60%, #1a2a1a 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: var(--navbar-height);
+}
+
+.vehicle-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255, 193, 7, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255, 193, 7, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.vehicle-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--bg-color), transparent);
+    pointer-events: none;
+}
+
+/* Diagonal accent lines */
+.hero-accent-lines {
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-accent-lines span {
+    position: absolute;
+    display: block;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 193, 7, 0.15), transparent);
+    transform: rotate(15deg);
+    transform-origin: top center;
+}
+
+.hero-accent-lines span:nth-child(1) { height: 120%; top: -10%; right: 15%; }
+.hero-accent-lines span:nth-child(2) { height: 80%;  top: 20%;  right: 30%; opacity: 0.6; }
+.hero-accent-lines span:nth-child(3) { height: 100%; top: 5%;   right: 5%;  opacity: 0.4; }
+
+.vehicle-hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+/* Hero Text */
+.vehicle-hero-text .tag-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 193, 7, 0.15);
+    border: 1px solid rgba(255, 193, 7, 0.4);
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+}
+
+.vehicle-hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.vehicle-hero-text h1 span {
+    color: var(--accent-color);
+    display: block;
+}
+
+.vehicle-hero-text .hero-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+}
+
+.hero-stat-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.hero-stat span {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* CTA Buttons */
+.btn-vehicle-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-vehicle-wa:hover {
+    background: #1fba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-vehicle-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-vehicle-call:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Image */
+.vehicle-hero-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vehicle-hero-image .vehicle-img-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.vehicle-hero-image img {
+    width: 100%;
+    max-width: 580px;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
+    animation: floatVehicle 4s ease-in-out infinite;
+}
+
+@keyframes floatVehicle {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+}
+
+.hero-glow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 40px;
+    background: radial-gradient(ellipse, rgba(255, 193, 7, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(10px);
+    animation: floatGlow 4s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+    0%, 100% { transform: translateX(-50%) scaleX(1);    opacity: 0.8; }
+    50%       { transform: translateX(-50%) scaleX(0.85); opacity: 0.4; }
+}
+
+/* New / Featured badge */
+.new-badge {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    animation: pulse-badge 2s ease-in-out infinite;
+    z-index: 3;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.5); }
+    50%       { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+}
+
+/* ===== SHARED SECTION INNER ===== */
+.vehicle-section {
+    padding: 5rem 2rem;
+}
+
+.vehicle-section .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vehicle-section-alt {
+    background: var(--secondary-color);
+}
+
+/* ===== FEATURES ===== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 193, 7, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.feature-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+/* ===== VARIANTS ===== */
+.variants-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.variant-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.variant-card.featured {
+    background: rgba(255, 193, 7, 0.08);
+    border-color: rgba(255, 193, 7, 0.4);
+}
+
+.variant-card.featured .variant-badge {
+    display: inline-block;
+}
+
+.variant-badge {
+    display: none;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+}
+
+.variant-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 193, 7, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.variant-seats {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.variant-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.variant-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+}
+
+.variant-features li {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.variant-features li i {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.variant-price {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.variant-price strong {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* ===== USE CASES ===== */
+.usecases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: 3rem;
+}
+
+.usecase-card {
+    background: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+.usecase-card:hover {
+    border-color: rgba(255, 193, 7, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.usecase-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.usecase-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.usecase-card p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+}
+
+/* ===== BOOKING SECTION ===== */
+.vehicle-booking {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #0a1520 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.vehicle-booking::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.vehicle-booking .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+
+.booking-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.booking-info p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.booking-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+}
+
+.booking-perks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.booking-perks li i {
+    color: var(--accent-color);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.booking-direct-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Vehicle Booking Form Card */
+.vehicle-form-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.vehicle-form-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+
+.vehicle-form-card p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.8rem;
+}
+
+.vehicle-form-card .form-group {
+    margin-bottom: 1rem;
+}
+
+.vehicle-form-card label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.4rem;
+}
+
+.vehicle-form-card input,
+.vehicle-form-card select,
+.vehicle-form-card textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.vehicle-form-card input::placeholder,
+.vehicle-form-card textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.vehicle-form-card input:focus,
+.vehicle-form-card select:focus,
+.vehicle-form-card textarea:focus {
+    outline: none;
+    border-color: rgba(255, 193, 7, 0.5);
+}
+
+.vehicle-form-card select option {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.vehicle-form-card textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-form-submit {
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-form-submit:hover {
+    background: #1fba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .vehicle-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    .vehicle-hero-text .hero-desc { margin: 0 auto 2rem; }
+    .hero-stat-row   { justify-content: center; }
+    .hero-cta-row    { justify-content: center; }
+    .vehicle-hero-image { order: -1; }
+    .vehicle-hero-image img { max-width: 380px; }
+
+    .features-grid   { grid-template-columns: repeat(2, 1fr); }
+    .variants-grid   { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .usecases-grid   { grid-template-columns: repeat(2, 1fr); }
+    .booking-layout  { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 600px) {
+    .features-grid  { grid-template-columns: 1fr; }
+    .usecases-grid  { grid-template-columns: 1fr; }
+    .hero-stat-row  { gap: 1.5rem; }
+    .vehicle-form-card { padding: 1.8rem 1.3rem; }
+}
