@@ -1,67 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
+  <url>
+    <loc>https://abhijeettravels.com/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+  </url>
 
-<url>
-  <loc>https://abhijeettravels.com/</loc>
-  <lastmod>2026-03-14T12:28:13+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/urbania-rent.html</loc>
-  <lastmod>2026-03-14T12:28:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/cruiser-rent.html</loc>
-  <lastmod>2026-03-14T12:28:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-pune-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-mumbai-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-kolhapur-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-hyderabad-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-akkalkot-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-tuljapur-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/routes/solapur-to-pandharpur-taxi.html</loc>
-  <lastmod>2026-03-14T12:28:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abhijeettravels.com/index.html</loc>
-  <lastmod>2026-03-14T12:28:13+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <!-- Vehicle Pages -->
+  <url>
+    <loc>https://abhijeettravels.com/urbania-rent.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/cruiser-rent.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
+  <!-- Route Pages -->
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-pune-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-mumbai-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-kolhapur-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-hyderabad-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-akkalkot-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-tuljapur-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://abhijeettravels.com/routes/solapur-to-pandharpur-taxi.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
 
 </urlset>
