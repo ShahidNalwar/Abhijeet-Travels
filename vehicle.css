@@ -754,17 +754,96 @@
     }
 }
 
-/* Pricing Table Styles */
-.pricing-table tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.02);
+/* Pricing Table Container - Remove Scroll */
+.pricing-table-container {
+    width: 100%;
+    overflow-x: hidden; /* Removes the horizontal scrollbar */
+    margin-top: 2rem;
 }
 
-.pricing-table tr:hover {
-    background: rgba(255, 193, 7, 0.05);
+/* Base Table Styles with Visible Lines */
+.pricing-table {
+    width: 100%;
+    table-layout: fixed; /* Forces columns to stay within screen width */
+    border-collapse: collapse; /* Essential for clean lines */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Outer border */
 }
 
-@media (max-width: 768px) {
-    .pricing-table {
-        min-width: 600px; /* Forces scroll on mobile to keep it readable */
+.pricing-table th, 
+.pricing-table td {
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Internal grid lines */
+    padding: 12px 8px;
+    text-align: center;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+/* Mobile Specific: Shrink to Fit 4 Columns */
+@media (max-width: 600px) {
+    .pricing-table th, 
+    .pricing-table td {
+        padding: 8px 2px; /* Minimal padding to prevent overlap */
+        font-size: 0.7rem; /* Small enough to fit all columns */
+        letter-spacing: -0.02em; /* Tighter text for narrow screens */
+    }
+    
+    .pricing-table th {
+        font-size: 0.72rem;
+        background: var(--accent-color);
+        color: var(--secondary-color);
+    }
+}
+
+/* Back to Main Page Link */
+.back-to-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.back-to-main:hover {
+    opacity: 1;
+    transform: translateX(-5px);
+    color: #fff;
+}
+
+.back-to-main i {
+    font-size: 0.8rem;
+}
+
+/* Ensure it stacks correctly on the Hero grid */
+.vehicle-hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Force Consistent Table Header Color */
+.pricing-table thead tr {
+    background-color: var(--accent-color) !important; /* Forces the yellow shade */
+}
+
+.pricing-table th {
+    background-color: var(--accent-color) !important;
+    color: var(--secondary-color) !important; /* Dark text for contrast */
+    padding: 12px 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle dark border for the yellow head */
+}
+
+/* Maintain the mobile font-size shrink while keeping the color */
+@media (max-width: 600px) {
+    .pricing-table th {
+        font-size: 0.72rem;
+        padding: 8px 2px;
     }
 }
