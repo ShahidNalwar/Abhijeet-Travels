@@ -1,0 +1,724 @@
+/* =======================================================
+   tempo-traveller.css
+   Tempo Traveller Hire Solapur — Abhijeet Tours & Travels
+   ======================================================= */
+
+/* ===== HERO ===== */
+.tt-hero {
+    min-height: 70vh;
+    background:
+        linear-gradient(135deg, rgba(13,27,42,0.92) 0%, rgba(10,21,32,0.88) 100%),
+        url('images/mini\ bus.png') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-top: var(--navbar-height);
+    position: relative;
+    overflow: hidden;
+}
+
+.tt-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(255,193,7,0.07) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.tt-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tt-hero-text .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,193,7,0.15);
+    border: 1px solid rgba(255,193,7,0.4);
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+}
+
+.tt-hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.tt-hero-text h1 span { color: var(--accent-color); }
+
+.tt-hero-text p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.tt-hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tt-stat strong {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.tt-stat span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tt-hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-tt-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-tt-book:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,193,7,0.35);
+}
+
+.btn-tt-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-tt-call:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.tt-hero-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tt-hero-img img {
+    max-width: 520px;
+    width: 100%;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.6));
+    animation: floatTT 4s ease-in-out infinite;
+}
+
+@keyframes floatTT {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+}
+
+/* ===== SECTION WRAPPER ===== */
+.tt-section {
+    padding: 5rem 2rem;
+}
+
+.tt-section-alt {
+    background: var(--secondary-color);
+}
+
+.tt-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== VEHICLE CARDS ===== */
+.tt-vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.tt-vehicle-card {
+    background: var(--card-bg-color);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tt-vehicle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-color: rgba(255,193,7,0.25);
+}
+
+.tt-vehicle-card.featured {
+    border-color: rgba(255,193,7,0.4);
+    background: linear-gradient(135deg, #415A77 0%, #2d4a63 100%);
+}
+
+.tt-vehicle-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    z-index: 2;
+}
+
+/* ===== FIX: Card image fills div fully ===== */
+.tt-card-img {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.tt-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.tt-vehicle-card:hover .tt-card-img img {
+    transform: scale(1.05);
+}
+
+.tt-card-body {
+    padding: 1.5rem;
+}
+
+.tt-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.tt-card-title h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.tt-card-rate {
+    background: rgba(255,193,7,0.15);
+    border: 1px solid rgba(255,193,7,0.3);
+    color: var(--accent-color);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.tt-card-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tt-spec {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.05);
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+}
+
+.tt-spec i {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+}
+
+.tt-card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+}
+
+.tt-card-features li {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.65);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tt-card-features li:last-child { border-bottom: none; }
+
+.tt-card-features li i {
+    color: var(--accent-color);
+    font-size: 0.72rem;
+    flex-shrink: 0;
+}
+
+.tt-card-footer {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-tt-enquire {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-tt-enquire:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.btn-tt-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: #25D366;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-tt-wa:hover { background: #1fba5a; }
+
+/* ===== PRICING TABLE ===== */
+.tt-pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3rem;
+    font-size: 0.88rem;
+}
+
+.tt-pricing-table thead tr {
+    background: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.tt-pricing-table thead th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tt-pricing-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.2s;
+}
+
+.tt-pricing-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.03);
+}
+
+.tt-pricing-table tbody tr:hover {
+    background: rgba(255,193,7,0.06);
+}
+
+.tt-pricing-table tbody td {
+    padding: 0.9rem 1.25rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.tt-pricing-table tbody td:first-child {
+    color: #fff;
+    font-weight: 600;
+}
+
+.tt-pricing-table .rate-cell {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* ===== ROUTE NOTE BOX ===== */
+.tt-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255,193,7,0.12);
+    border: 1px solid rgba(255,193,7,0.4);
+    border-left: 4px solid #FFC107;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.tt-note i {
+    color: #FFC107;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.tt-note p {
+    font-size: 0.88rem;
+    color: #E0E0E0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.tt-note strong { color: #FFC107; }
+
+/* ===== USE CASES ===== */
+.tt-usecases {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: 3rem;
+}
+
+.tt-usecase {
+    background: var(--card-bg-color);
+    border-radius: 14px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tt-usecase:hover {
+    border-color: rgba(255,193,7,0.3);
+    transform: translateY(-4px);
+}
+
+.tt-usecase-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.tt-usecase h4 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.tt-usecase p { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+/* ===== BOOKING SECTION ===== */
+.tt-booking {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #0a1520 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.tt-booking::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,193,7,0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.tt-booking-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.tt-booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+
+.tt-booking-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.tt-booking-info p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.tt-perks { list-style: none; padding: 0; margin: 0 0 2.5rem; }
+
+.tt-perks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.tt-perks li i { color: var(--accent-color); margin-top: 2px; flex-shrink: 0; }
+
+.tt-contact-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ===== FORM CARD ===== */
+.tt-form-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.tt-form-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tt-form-card > p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.75rem;
+}
+
+.tt-form-card .form-group { margin-bottom: 1rem; }
+
+.tt-form-card label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.35rem;
+}
+
+.tt-form-card label i { color: var(--accent-color); font-size: 0.82rem; }
+
+.tt-form-card input,
+.tt-form-card select,
+.tt-form-card textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.tt-form-card input::placeholder,
+.tt-form-card textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+.tt-form-card input:focus,
+.tt-form-card select:focus,
+.tt-form-card textarea:focus {
+    outline: none;
+    border-color: rgba(255,193,7,0.5);
+}
+
+.tt-form-card select option { background: var(--secondary-color); color: #fff; }
+.tt-form-card textarea { resize: vertical; min-height: 80px; }
+
+.btn-tt-submit {
+    width: 100%;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-tt-submit:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,193,7,0.3);
+}
+
+/* ===== FAQ — FULL STYLES (not relying on style.css) ===== */
+.tt-faq {
+    padding: 5rem 2rem;
+    background: var(--bg-color);
+}
+
+.tt-faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 1.2rem 0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-color);
+}
+
+.faq-question i {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-question {
+    color: var(--accent-color);
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer p {
+    padding: 0 0 1.25rem;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+.faq-answer strong {
+    color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .tt-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .tt-hero-text p { margin: 0 auto 2rem; }
+    .tt-hero-stats { justify-content: center; }
+    .tt-hero-btns  { justify-content: center; }
+    .tt-hero-img   { order: -1; }
+
+    .tt-vehicles-grid   { grid-template-columns: repeat(2, 1fr); }
+    .tt-usecases        { grid-template-columns: repeat(2, 1fr); }
+    .tt-booking-layout  { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    .tt-pricing-table { font-size: 0.8rem; }
+    .tt-pricing-table thead th,
+    .tt-pricing-table tbody td { padding: 0.75rem 0.9rem; }
+}
+
+@media (max-width: 600px) {
+    .tt-vehicles-grid { grid-template-columns: 1fr; }
+    .tt-usecases      { grid-template-columns: 1fr; }
+    .tt-form-card     { padding: 1.75rem 1.25rem; }
+    .tt-hero-img img  { max-width: 300px; }
+    .tt-card-img      { height: 160px; }
+}

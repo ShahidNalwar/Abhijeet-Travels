@@ -547,6 +547,7 @@ section[id], header[id] {
 }
 
 
+
 /* ============================================================
    VEHICLES SECTION
    ============================================================ */
@@ -1468,4 +1469,247 @@ section[id], header[id] {
 
     .footer-logo a { font-size: 1.25rem; }
     .footer-contact a, .footer-contact span { font-size: 0.8rem; }
+}
+/* ===================== MASSIVE CINEMATIC RENTAL GRID ===================== */
+.rental-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 3rem;
+    max-width: 1600px; /* Nearly full-width of laptop screens */
+    margin: 0 auto;
+    padding: 0 3%;
+}
+
+/* Forces the 3rd box to center on the second row with identical width */
+.traveller-span {
+    grid-column: 1 / span 2; 
+    justify-self: center;
+    width: calc(50% - 1.5rem); /* Perfectly matches the size of boxes above */
+}
+
+.rental-box {
+    background-color: #1B263B; /* Deep Navy - No longer white */
+    border-radius: 40px; /* Highly rounded for premium feel */
+    display: flex;
+    align-items: center;
+    height: 400px; /* Massive height for "bigg" appearance */
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: visible; /* Allows image to break container boundaries */
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.rental-box:hover {
+    transform: translateY(-15px) scale(1.03);
+    background-color: #24344d; /* Slight lighten on hover */
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+.rental-info {
+    flex: 0.7; 
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 5;
+}
+
+.rental-info h3 {
+    font-family: 'Playfair Display', serif; /* Brand matching font */
+    font-size: 2.5rem; /* Large font for large div */
+    color: #FFFFFF; 
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.rental-btn-circle {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFC107; /* Your accent color */
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.rental-box:hover .rental-btn-circle {
+    background-color: #FFC107; 
+    color: #0D1B2A;
+    transform: rotate(-45deg);
+}
+
+.rental-visual {
+    flex: 1.3;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accent-shape {
+    position: absolute;
+    width: 95%;
+    height: 85%;
+    border-radius: 40px;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.blue-gradient { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+.dark-gradient { background: linear-gradient(135deg, #0d1b2a, #415a77); }
+
+.rental-img {
+    position: relative;
+    z-index: 2;
+    width: 135%; /* Extremely large pop-out effect */
+    max-height: 320px; 
+    object-fit: contain;
+    filter: drop-shadow(0 25px 30px rgba(0,0,0,0.5));
+    transition: transform 0.6s ease;
+}
+
+.rental-box:hover .rental-img {
+    transform: scale(1.1) rotate(-2deg) translateX(20px);
+}
+
+/* ===================== MOBILE / TABLET OPTIMIZATION ===================== */
+
+/* ===================== MOBILE & TABLET FIX ===================== */
+
+/* For Tablets and smaller laptops */
+
+/* ===================== MOBILE ARROW POSITION FIX ===================== */
+@media (max-width: 768px) {
+    .rental-box {
+        flex-direction: column;
+        height: auto; 
+        padding: 1.5rem; /* Reduced padding for tighter mobile look */
+        min-height: auto; /* Removed large min-height to snap to content */
+        text-align: center;
+    }
+
+    .rental-info {
+        flex: none;
+        padding: 1rem 0 0 0; /* Tighten top padding */
+        width: 100%;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the title and button */
+        justify-content: flex-start; /* Prevents button from drifting to bottom */
+        gap: 1rem; /* Controlled space between title and arrow */
+    }
+
+    .rental-info h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .rental-btn-circle {
+        margin: 0 auto; /* Ensures horizontal centering */
+        width: 55px;
+        height: 55px;
+        position: relative; /* Removes any drifting behavior */
+        bottom: 0; /* Keeps it right under the text */
+    }
+
+    .rental-visual {
+        order: 1;
+        height: 180px; /* Snugger height for the car on mobile */
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .rental-img {
+        max-height: 150px;
+        width: auto;
+    }
+}
+@media (max-width: 1100px) {
+    .rental-grid {
+        grid-template-columns: 1fr; /* Switch to one column earlier for better spacing */
+        gap: 2rem;
+    }
+
+    .traveller-span {
+        width: 100%; /* Resets the centered width to full width */
+        grid-column: auto;
+    }
+
+    .rental-box {
+        height: 350px; /* Slightly shorter for tablets */
+    }
+}
+
+/* For Mobile Devices (Small screens) */
+@media (max-width: 768px) {
+    .rental-grid {
+        grid-template-columns: 1fr; /* Explicitly one after another */
+        padding: 0 5%;
+        gap: 1.5rem;
+    }
+
+    .rental-box {
+        flex-direction: column; /* Stacks text above image */
+        height: auto; /* Allows height to grow with content */
+        padding: 2rem 1rem;
+        min-height: 450px; /* Ensures enough space for massive look */
+        text-align: center;
+    }
+
+    .traveller-span {
+        grid-column: auto;
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    .rental-info {
+        flex: none;
+        padding: 1rem 0;
+        width: 100%;
+        order: 2; /* Moves text below the image for better mobile UX */
+        gap: 1.5rem;
+    }
+
+    .rental-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .rental-visual {
+        flex: none;
+        height: 200px;
+        width: 100%;
+        order: 1; /* Vehicle appears first on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .accent-shape {
+        width: 80%;
+        height: 90%;
+        right: auto; /* Centers the shape */
+    }
+
+    .rental-img {
+        width: 100%; /* Prevents clipping on narrow screens */
+        max-height: 180px;
+        transform: scale(1.1); /* Keeps the "bigg" look without overflow issues */
+    }
+
+    .rental-box:hover .rental-img {
+        transform: scale(1.15); /* Subtler hover for touch devices */
+    }
+
+    .rental-btn-circle {
+        margin: 1rem auto 0 auto; /* Centers the arrow button */
+    }
 }
