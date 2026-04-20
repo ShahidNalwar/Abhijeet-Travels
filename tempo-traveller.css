@@ -8,7 +8,7 @@
     min-height: 70vh;
     background:
         linear-gradient(135deg, rgba(13,27,42,0.92) 0%, rgba(10,21,32,0.88) 100%),
-        url('images/mini\ bus.png') center center / cover no-repeat;
+        url('images/mini bus.png') center center / cover no-repeat;
     display: flex;
     align-items: center;
     padding-top: var(--navbar-height);
