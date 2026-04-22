@@ -120,7 +120,8 @@
 }
 
 .btn-tt-call {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.6rem;
     background: transparent;
@@ -313,7 +314,8 @@
 }
 
 .tt-card-footer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(1 ,1fr);
     gap: 0.75rem;
 }
 
@@ -722,3 +724,90 @@
     .tt-hero-img img  { max-width: 300px; }
     .tt-card-img      { height: 160px; }
 }
+
+/* ===================== SEO LINKS SECTION ===================== */
+.seo-links-section {
+    padding: 4rem 5%;
+    background-color: #0D1B2A; /* Deepest Navy to contrast the footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.seo-links-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.seo-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.seo-links-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.seo-column h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.seo-column a {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.seo-column a:hover {
+    color: var(--accent-color);
+    padding-left: 8px;
+}
+
+/* ===================== SEO LINKS RESPONSIVE ===================== */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .seo-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .seo-links-section {
+        padding: 3rem 5%;
+    }
+
+    .seo-links-grid {
+        grid-template-columns: 1fr; /* Single column stack */
+        gap: 2.5rem;
+    }
+
+    .seo-title {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .seo-column a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+}
+
